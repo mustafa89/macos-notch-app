@@ -8,8 +8,9 @@ the notch and it grows into a panel; move away and it tucks back in.
 - **Mirror**: your camera in a little mirror under the notch.
 - **Pomodoro**: a focus timer with a kitsune that grows a tail for each ninth of a session;
   while it runs, the collapsed notch shows a ring and the time either side of the notch.
-- **Quick Note**: a scratch note that keeps what you type.
-- **System**: CPU, memory and other gauges.
+- **Quick Note**: a scratch note, autosaved to
+  `~/Library/Application Support/NotchSwitcher/note.txt`.
+- **System**: car-dashboard gauges for CPU, memory, network and disk.
 - **Nightjar**: now playing from [Nightjar](https://github.com/mustafa89/nightjar), with
   a spectrum, progress, play/pause and skip, and a Live Activity (a note badge and live bars
   beside the notch) while music plays.
