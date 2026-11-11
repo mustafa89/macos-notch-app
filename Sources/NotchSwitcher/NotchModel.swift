@@ -51,7 +51,7 @@ final class NotchModel: ObservableObject {
     let camera = MirrorCamera()
 
     let pomodoro = Pomodoro()
-    let pomodoroSize = CGSize(width: 340, height: 96)
+    let pomodoroSize = CGSize(width: 370, height: 96)
     /// Extra width on each side of the collapsed notch while a Pomodoro is active.
     let liveActivityWidth: CGFloat = 46
 
@@ -265,6 +265,21 @@ final class NotchModel: ObservableObject {
             let config = NSWorkspace.OpenConfiguration()
             config.activates = true
             NSWorkspace.shared.openApplication(at: url, configuration: config)
+        }
+    }
+
+    /// Sample geometry and state for the README renders (tools/render): a notch of the usual
+    /// size on a 1512-point-wide screen, `apps` in the row, the pointer at `hover` (an item
+    /// index) for the magnification.
+    func preview(mode: Mode, expanded: Bool, apps: [NSRunningApplication], hover: Int?) {
+        screenFrame = CGRect(x: 0, y: 0, width: 1512, height: 982)
+        notchSize = CGSize(width: 190, height: 32)
+        self.apps = apps
+        self.mode = mode
+        isExpanded = expanded
+        if let hover {
+            let x = screenFrame.midX + (CGFloat(hover) - CGFloat(itemCount - 1) / 2) * slot
+            pointer = CGPoint(x: x, y: screenFrame.maxY - notchSize.height - 20)
         }
     }
 }
