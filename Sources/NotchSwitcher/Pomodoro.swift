@@ -97,6 +97,14 @@ final class Pomodoro: ObservableObject {
         remaining = phase.duration
         if notify { NSSound(named: "Glass")?.play() }
     }
+
+    /// Sample state for the README renders (tools/render): no timer runs.
+    func preview(remaining: TimeInterval, running: Bool, completed: Int) {
+        phase = .focus
+        self.remaining = remaining
+        isRunning = running
+        completedFocus = completed
+    }
 }
 
 /// Progress ring used in the panel, the row button and the collapsed notch.

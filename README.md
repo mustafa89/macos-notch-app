@@ -19,6 +19,18 @@ the notch and it grows into a panel; move away and it tucks back in.
 
 Without a hardware notch it draws a notch-sized pill under the menu bar instead.
 
+![The app row, magnified under the pointer](docs/apps.png)
+
+| Pomodoro | System gauges |
+|---|---|
+| ![The Pomodoro panel with the kitsune](docs/pomodoro.png) | ![CPU, memory, network and disk gauges](docs/gauges.png) |
+
+| Nightjar now playing | Live Activity while music plays |
+|---|---|
+| ![The Nightjar panel](docs/nightjar.png) | ![The collapsed notch with a note badge and live bars](docs/live-activity.png) |
+
+The images are rendered from the app's own views with sample data (`tools/render.sh`).
+
 ## Requirements and build
 
 macOS 14 or later on Apple silicon, and the Xcode Command Line Tools (`xcode-select --install`).
@@ -30,6 +42,9 @@ open build/NotchSwitcher.app    # an agent app: no Dock icon; right-click the no
 ```
 
 The mirror asks for camera access the first time it opens.
+
+`tools/render.sh` re-renders the README images into `docs/`: no window, no screen capture,
+and the real note file is never read.
 
 ## Nightjar link
 

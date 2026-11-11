@@ -167,6 +167,17 @@ final class NowPlaying: ObservableObject {
         state = .stopped
         levels.bands = levels.bands.map { _ in 0 }
     }
+
+    /// A sample song for the README renders (tools/render), as if Nightjar had just reported it.
+    func preview(title: String, artist: String, position: Double, duration: Double, bands: [CGFloat]) {
+        connected = true
+        state = .playing
+        self.title = title
+        self.artist = artist
+        levels.bands = bands
+        levels.position = position
+        levels.duration = duration
+    }
 }
 
 extension Color {

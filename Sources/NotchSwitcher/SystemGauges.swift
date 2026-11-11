@@ -107,6 +107,15 @@ final class SystemStats: ObservableObject {
         }
         return (rx, tx)
     }
+
+    /// Sample readings for the README renders (tools/render): nothing is sampled.
+    func preview(cpu: Double, memory: Double, disk: Double, download: Double, upload: Double) {
+        self.cpu = cpu
+        self.memory = memory
+        self.disk = disk
+        self.download = download
+        self.upload = upload
+    }
 }
 
 /// Needle angle: 135° (bottom-left) sweeping 270° clockwise to 45° (bottom-right), like a car dial.
